@@ -10,5 +10,18 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest'
-  }
+  },
+  overrides: [
+    {
+      files: ['*.cjs'],
+      env: {
+        node: true,
+        commonjs: true
+      },
+      globals: {
+        require: 'readonly',
+        process: 'readonly'
+      }
+    }
+  ]
 }
