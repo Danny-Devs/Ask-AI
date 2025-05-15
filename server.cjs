@@ -1,4 +1,4 @@
-const envConfig = require('dotenv').config()
+require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
@@ -42,7 +42,7 @@ app.post('/chat', async (req, res) => {
   }
 })
 
-////// Deepgram config //////
+/// Deepgram config ///
 const { createClient } = require('@deepgram/sdk')
 const deepgram = createClient(process.env.DG_API)
 
@@ -70,7 +70,7 @@ app.post('/dg-transcription', upload.single('file'), async (req, res) => {
   }
 })
 
-////// Replicate config //////
+/// Replicate config ///
 const Replicate = require('replicate')
 const replicate = new Replicate({
   auth: process.env.REPLICATE
@@ -94,7 +94,7 @@ app.post('/minigpt', async (req, res) => {
   }
 })
 
-////// Token Counter //////
+/// Token Counter ///
 const { encode } = require('gpt-3-encoder')
 
 // Token Counter
